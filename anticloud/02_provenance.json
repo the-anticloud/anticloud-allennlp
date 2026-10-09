@@ -1,0 +1,9 @@
+{
+  "project": "ALLENNLP",
+  "cat": "ACADEMIA_RD",
+  "upstream_url": "unknown",
+  "upstream_sha": "UNMEASURED",
+  "clone_tree_sha3_256": "f52872d1182073ab4815ee2acac300f1882e3d33a75f8ce9ef3b656ed9e805da",
+  "license": "Apache-2.0",
+  "measured_utc": "2026-10-06T06:48:58.670449Z"
+}
