@@ -1,0 +1,46 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:99a643bf-1a24-5498-9fdf-2ca511890d57",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-06T06:48:57Z",
+    "component": {
+      "type": "application",
+      "name": "ALLENNLP",
+      "version": "83b357604d34",
+      "bom-ref": "pkg:generic/anticloud/ALLENNLP@83b357604d34",
+      "purl": "pkg:generic/anticloud/ALLENNLP@83b357604d34",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "anticloud:source-commit",
+        "value": ""
+      },
+      {
+        "name": "anticloud:source-url",
+        "value": "https://github.com/the-anticloud/OPENMRS_CORE.git"
+      },
+      {
+        "name": "anticloud:tier",
+        "value": "tier-agent"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "allennlp",
+      "version": "=allennlp.__main__:run",
+      "purl": "pkg:pypi/allennlp@allennlp.__main__:run",
+      "bom-ref": "pypi/allennlp@=allennlp.__main__:run"
+    }
+  ]
+}
