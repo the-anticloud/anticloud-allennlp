@@ -1,0 +1,32 @@
+Anticloud Reference
+Copyright 2026 Anticloud
+
+This product includes software developed at Anticloud.
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not
+use this file except in compliance with the License. You may obtain a copy of
+the License at http://www.apache.org/licenses/LICENSE-2.0
+
+--------------------------------------------------------------------------
+Third-party components
+--------------------------------------------------------------------------
+
+cryptography -- Apache-2.0 OR BSD-3-Clause
+    https://github.com/pyca/cryptography
+    The sole runtime dependency. Used for AES-256-GCM, scrypt and Ed25519
+    via its `hazmat.primitives` subpackage.
+
+pytest -- MIT
+    https://github.com/pytest-dev/pytest
+    Development dependency only; never installed in a production image.
+
+pytest-cov -- MIT
+    https://github.com/pytest-dev/pytest-cov
+    Development dependency only.
+
+No component of this project is licensed under the GNU General Public
+License, the GNU Affero General Public License, the GNU Lesser General Public
+License, the Server Side Public License, or the Commons Clause. The project's
+`licence` subpackage enforces that as a build-time gate: any dependency
+introduced under one of those terms is classified class B and may not be
+redistributed or relicensed. See 11_LICENCE_POLICY/ for the full policy.
