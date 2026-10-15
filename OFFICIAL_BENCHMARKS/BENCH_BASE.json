@@ -1,0 +1,723 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "ALLENNLP",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\ACADEMIA_RD\\ALLENNLP\\UPSTREAM_CLONE",
+    "git": {
+      "head": "",
+      "url": "https://github.com/the-anticloud/OPENMRS_CORE.git",
+      "branch": "master",
+      "committed_at": "2026-09-29T11:06:59+04:00"
+    }
+  },
+  "metrics": {
+    "files_total": 747,
+    "source_files_scanned": 567,
+    "lines_of_code": 91503,
+    "languages": {
+      ".py": 602,
+      ".txt": 24,
+      ".gz": 18,
+      ".json": 16,
+      "(none)": 14,
+      ".th": 7,
+      ".md": 6,
+      ".zip": 5,
+      ".jsonnet": 5,
+      ".hdf5": 5,
+      ".jsonl": 5,
+      ".tsv": 4,
+      ".sh": 4,
+      ".ini": 3,
+      ".prm": 3
+    }
+  },
+  "licence": {
+    "spdx": "Apache-2.0",
+    "class": "A",
+    "source_file": "LICENSE",
+    "redistribution_allowed": true
+  },
+  "dependencies": {
+    "count": 1,
+    "unique": 1,
+    "by_ecosystem": {
+      "pypi": 1
+    },
+    "list": [
+      {
+        "ecosystem": "pypi",
+        "name": "allennlp",
+        "version": "=allennlp.__main__:run",
+        "source_file": "setup.py",
+        "raw": "allennlp=allennlp.__main__:run"
+      }
+    ]
+  },
+  "owasp_top10": {
+    "total_findings": 80,
+    "files_with_findings": 75,
+    "severity": {
+      "high": 36,
+      "medium": 1,
+      "low": 43
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 0,
+        "findings": []
+      },
+      "A02-CryptographicFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A03-Injection": {
+        "count": 37,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "setup.py",
+            "line": 69,
+            "cwe": "CWE-95",
+            "snippet": "exec(version_file.read(), VERSION)"
+          },
+          {
+            "severity": "high",
+            "file": "tests/training/util_test.py",
+            "line": 198,
+            "cwe": "CWE-502",
+            "snippet": "assert {\"message\": \"example\"} == vars(pickle.loads(pickle.dumps(e)))"
+          },
+          {
+            "severity": "high",
+            "file": "tests/nn/checkpoint/checkpoint_wrapper_test.py",
+            "line": 67,
+            "cwe": "CWE-95",
+            "snippet": "module.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "tests/nn/checkpoint/fairscale_checkpoint_wrapper_test.py",
+            "line": 74,
+            "cwe": "CWE-95",
+            "snippet": "module.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "tests/modules/elmo_test.py",
+            "line": 144,
+            "cwe": "CWE-95",
+            "snippet": "elmo_bilm.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "tests/modules/residual_with_layer_dropout_test.py",
+            "line": 40,
+            "cwe": "CWE-95",
+            "snippet": "residual_with_layer_dropout.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "tests/modules/sampled_softmax_loss_test.py",
+            "line": 31,
+            "cwe": "CWE-95",
+            "snippet": "sampled_softmax.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "tests/modules/vision/region_detector_test.py",
+            "line": 14,
+            "cwe": "CWE-95",
+            "snippet": "backbone.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "tests/modules/transformer/self_attention_test.py",
+            "line": 78,
+            "cwe": "CWE-95",
+            "snippet": "module = module.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "tests/modules/transformer/t5_self_attention_test.py",
+            "line": 78,
+            "cwe": "CWE-95",
+            "snippet": "t5_attention = t5_attention.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "tests/modules/transformer/t5_test.py",
+            "line": 31,
+            "cwe": "CWE-95",
+            "snippet": "model = T5.from_pretrained_module(model_name).eval()"
+          },
+          {
+            "severity": "high",
+            "file": "tests/modules/transformer/toolkit_test.py",
+            "line": 179,
+            "cwe": "CWE-95",
+            "snippet": "huggingface_model = cached_transformers.get(model_name, make_copy=False).eval()"
+          },
+          {
+            "severity": "high",
+            "file": "tests/modules/transformer/transformer_embeddings_test.py",
+            "line": 212,
+            "cwe": "CWE-95",
+            "snippet": "transformer_embeddings.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "tests/modules/transformer/transformer_layer_test.py",
+            "line": 38,
+            "cwe": "CWE-95",
+            "snippet": "attention_layer = AttentionLayer.from_params(attention_params.duplicate()).eval()"
+          },
+          {
+            "severity": "high",
+            "file": "tests/modules/transformer/transformer_stack_test.py",
+            "line": 72,
+            "cwe": "CWE-95",
+            "snippet": "transformer_stack = TransformerStack.from_params(params).eval()"
+          },
+          {
+            "severity": "high",
+            "file": "tests/modules/seq2seq_encoders/pytorch_transformer_wrapper_test.py",
+            "line": 18,
+            "cwe": "CWE-95",
+            "snippet": "transformer.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "tests/models/multitask_test.py",
+            "line": 54,
+            "cwe": "CWE-95",
+            "snippet": "model.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "tests/data/vocabulary_test.py",
+            "line": 42,
+            "cwe": "CWE-502",
+            "snippet": "unpickled = pickle.loads(pickled)"
+          },
+          {
+            "severity": "high",
+            "file": "tests/data/fields/list_field_test.py",
+            "line": 308,
+            "cwe": "CWE-95",
+            "snippet": "model.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "scripts/build_docs_config.py",
+            "line": 49,
+            "cwe": "CWE-502",
+            "snippet": "source_yaml = yaml.load(Path(opts.source_yaml))"
+          },
+          {
+            "severity": "high",
+            "file": "scripts/get_version.py",
+            "line": 18,
+            "cwe": "CWE-95",
+            "snippet": "exec(version_file.read(), VERSION)"
+          },
+          {
+            "severity": "high",
+            "file": "scripts/release_notes.py",
+            "line": 48,
+            "cwe": "CWE-78",
+            "snippet": "stream = os.popen("
+          },
+          {
+            "severity": "high",
+            "file": "scripts/ai2_internal/run_with_beaker.py",
+            "line": 51,
+            "cwe": "CWE-78",
+            "snippet": "result = subprocess.run(\"git diff-index --quiet HEAD --\", shell=True)"
+          },
+          {
+            "severity": "high",
+            "file": "allennlp/training/gradient_descent_trainer.py",
+            "line": 641,
+            "cwe": "CWE-95",
+            "snippet": "self._pytorch_model.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "allennlp/training/util.py",
+            "line": 339,
+            "cwe": "CWE-95",
+            "snippet": "model.eval()"
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 35,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "tests/nn/parallel/fairscale_fsdp_accelerator_test.py",
+            "line": 146,
+            "cwe": "CWE-",
+            "snippet": "# TODO: grad scaler doesn't work now due to https://github.com/facebookresearch/fairscale/issues/421."
+          },
+          {
+            "severity": "low",
+            "file": "tests/modules/transformer/transformer_layer_test.py",
+            "line": 112,
+            "cwe": "CWE-",
+            "snippet": "# Hacky way to get a bert layer."
+          },
+          {
+            "severity": "low",
+            "file": "tests/modules/token_embedders/pretrained_transformer_embedder_test.py",
+            "line": 288,
+            "cwe": "CWE-",
+            "snippet": "# Let's just say [PAD] is 0, [CLS] is xxx1, and [SEP] is xxx2"
+          },
+          {
+            "severity": "low",
+            "file": "tests/commands/evaluate_test.py",
+            "line": 165,
+            "cwe": "CWE-",
+            "snippet": "# TODO(mattg): the unawarded_embeddings.gz file above doesn't exist, but this test still"
+          },
+          {
+            "severity": "low",
+            "file": "tests/commands/train_test.py",
+            "line": 388,
+            "cwe": "CWE-",
+            "snippet": "# TODO: This is somewhat brittle. Make these constants in trainer.py."
+          },
+          {
+            "severity": "low",
+            "file": "scripts/ai2_internal/resume_daemon.py",
+            "line": 295,
+            "cwe": "CWE-",
+            "snippet": "# TODO(brendanr): Is there a better way to do this?"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/training/metrics/span_based_f1_measure.py",
+            "line": 211,
+            "cwe": "CWE-",
+            "snippet": "This is basically a massive hack to allow SRL models which produce a linear sequence of"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/nn/activations.py",
+            "line": 52,
+            "cwe": "CWE-",
+            "snippet": "# There are no classes to decorate, so we hack these into Registrable._registry."
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/nn/util.py",
+            "line": 617,
+            "cwe": "CWE-",
+            "snippet": "# TODO(mattg): My guess is this will basically never happen, so I'm not writing logic to"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/encoder_base.py",
+            "line": 45,
+            "cwe": "CWE-",
+            "snippet": "before being passed as input. As all of our Seq2xxxEncoders use this functionality,"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/sampled_softmax_loss.py",
+            "line": 89,
+            "cwe": "CWE-",
+            "snippet": "# TODO(joelgrus): implement tie_embeddings (maybe)"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/softmax_loss.py",
+            "line": 17,
+            "cwe": "CWE-",
+            "snippet": "# TODO(joelgrus): implement tie_embeddings (maybe)"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/transformer/attention_module.py",
+            "line": 168,
+            "cwe": "CWE-",
+            "snippet": "# TODO: clarify logic in terms of is_decoder and is_cross_attention"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/transformer/positional_encoding.py",
+            "line": 48,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Another option is to specify the expected size in init, so that we can construct"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/transformer/t5.py",
+            "line": 964,
+            "cwe": "CWE-",
+            "snippet": "# TODO: HF only does this when does this when embeddings are tied."
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/token_embedders/embedding.py",
+            "line": 152,
+            "cwe": "CWE-",
+            "snippet": "# TODO: having to pass tokens here is SUPER gross, but otherwise this breaks the"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/seq2vec_encoders/pytorch_seq2vec_wrapper.py",
+            "line": 24,
+            "cwe": "CWE-",
+            "snippet": "concatenate the forward and backward final states together. TODO(mattg): allow for other ways"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/models/model.py",
+            "line": 224,
+            "cwe": "CWE-",
+            "snippet": "# NOTE(markn): This is a hack because 0-dim pytorch tensors are not iterable."
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/interpret/saliency_interpreters/smooth_gradient.py",
+            "line": 38,
+            "cwe": "CWE-",
+            "snippet": "# TODO (@Eric-Wallace), SmoothGrad is not using times input normalization."
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/interpret/influence_interpreters/simple_influence.py",
+            "line": 129,
+            "cwe": "CWE-",
+            "snippet": "# TODO (epwalsh): should we divide `x.grads` by `self._scale`?"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/interpret/attackers/hotflip.py",
+            "line": 120,
+            "cwe": "CWE-",
+            "snippet": "# A bit of a hack; this will only work with some dataset readers, but it'll do for now."
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/interpret/attackers/utils.py",
+            "line": 25,
+            "cwe": "CWE-",
+            "snippet": "# TODO(mattg): this really should live on the Predictor.  We have some messy stuff for, e.g.,"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/fairness/bias_mitigator_applicator.py",
+            "line": 69,
+            "cwe": "CWE-",
+            "snippet": "# TODO: adapt BiasMitigatorWrapper to changes in Model"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/fairness/bias_mitigator_wrappers.py",
+            "line": 36,
+            "cwe": "CWE-",
+            "snippet": "# TODO: remove equalize words from evaluation words"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/evaluation/evaluator.py",
+            "line": 206,
+            "cwe": "CWE-",
+            "snippet": "# TODO(gabeorlanski): Add in postprocessing the batch for token"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 0,
+        "findings": []
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 8,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "tests/modules/token_embedders/embedding_test.py",
+            "line": 202,
+            "cwe": "CWE-319",
+            "snippet": "\"http://www.embeddings.com/path/to/embeddings.gz\","
+          },
+          {
+            "severity": "low",
+            "file": "tests/common/file_utils_test.py",
+            "line": 110,
+            "cwe": "CWE-319",
+            "snippet": "\"http://allenai.org\","
+          },
+          {
+            "severity": "low",
+            "file": "scripts/tests/py2md/basic_example.py",
+            "line": 4,
+            "cwe": "CWE-319",
+            "snippet": "And this is a multi-line line: [http://example.com]"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/tools/inspect_cache.py",
+            "line": 24,
+            "cwe": "CWE-",
+            "snippet": "print(\"ETag: %s\" % etag)"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/conditional_random_field/conditional_random_field.py",
+            "line": 164,
+            "cwe": "CWE-319",
+            "snippet": "See, e.g. http://www.cs.columbia.edu/~mcollins/fb.pdf"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/conditional_random_field/conditional_random_field_wemission.py",
+            "line": 19,
+            "cwe": "CWE-319",
+            "snippet": "See, e.g. http://www.cs.columbia.edu/~mcollins/fb.pdf"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/conditional_random_field/conditional_random_field_wlannoy.py",
+            "line": 19,
+            "cwe": "CWE-319",
+            "snippet": "See, e.g. http://www.cs.columbia.edu/~mcollins/fb.pdf"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/conditional_random_field/conditional_random_field_wtrans.py",
+            "line": 19,
+            "cwe": "CWE-319",
+            "snippet": "See, e.g. http://www.cs.columbia.edu/~mcollins/fb.pdf"
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 15,
+    "files_with_findings": 15,
+    "severity": {
+      "high": 0,
+      "medium": 13,
+      "low": 2
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 12,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "tests/modules/transformer/bimodal_encoder_test.py",
+            "line": 60,
+            "cwe": "CWE-494",
+            "snippet": "pretrained_module = AutoModel.from_pretrained(\"bert-base-cased\").encoder"
+          },
+          {
+            "severity": "medium",
+            "file": "tests/modules/transformer/self_attention_test.py",
+            "line": 66,
+            "cwe": "CWE-494",
+            "snippet": "pretrained_module = dict(AutoModel.from_pretrained(pretrained_name).named_modules())["
+          },
+          {
+            "severity": "medium",
+            "file": "tests/modules/transformer/t5_self_attention_test.py",
+            "line": 104,
+            "cwe": "CWE-494",
+            "snippet": "pretrained_module = dict(AutoModel.from_pretrained(pretrained_name).named_modules())["
+          },
+          {
+            "severity": "medium",
+            "file": "tests/modules/transformer/t5_test.py",
+            "line": 18,
+            "cwe": "CWE-494",
+            "snippet": "def test_create_t5_from_pretrained(pretrained_model_name: str):"
+          },
+          {
+            "severity": "medium",
+            "file": "tests/modules/transformer/toolkit_test.py",
+            "line": 153,
+            "cwe": "CWE-494",
+            "snippet": "self.embeddings = AutoModel.from_pretrained(\"albert-base-v2\").embeddings"
+          },
+          {
+            "severity": "medium",
+            "file": "tests/modules/transformer/transformer_embeddings_test.py",
+            "line": 170,
+            "cwe": "CWE-494",
+            "snippet": "albert = AutoModel.from_pretrained(\"albert-base-v2\")"
+          },
+          {
+            "severity": "medium",
+            "file": "tests/modules/transformer/transformer_layer_test.py",
+            "line": 104,
+            "cwe": "CWE-494",
+            "snippet": "def test_attention_from_pretrained(pretrained_name, relevant_top_level_module):"
+          },
+          {
+            "severity": "medium",
+            "file": "tests/modules/transformer/transformer_stack_test.py",
+            "line": 86,
+            "cwe": "CWE-494",
+            "snippet": "def test_loading_from_pretrained(pretrained_model_name):"
+          },
+          {
+            "severity": "medium",
+            "file": "tests/common/cached_transformers_test.py",
+            "line": 36,
+            "cwe": "CWE-494",
+            "snippet": "config = AutoConfig.from_pretrained(\"epwalsh/bert-xsmall-dummy\", cache_dir=self.TEST_DIR)"
+          },
+          {
+            "severity": "medium",
+            "file": "allennlp/modules/transformer/transformer_module.py",
+            "line": 216,
+            "cwe": "CWE-494",
+            "snippet": "Optional key-word arguments to pass to `transformers.AutoConfig.from_pretrained()`"
+          },
+          {
+            "severity": "medium",
+            "file": "allennlp/modules/seq2vec_encoders/bert_pooler.py",
+            "line": 26,
+            "cwe": "CWE-494",
+            "snippet": "we will call `transformers.AutoModel.from_pretrained(pretrained_model)`"
+          },
+          {
+            "severity": "medium",
+            "file": "allennlp/common/cached_transformers.py",
+            "line": 87,
+            "cwe": "CWE-494",
+            "snippet": "AutoConfig.from_pretrained("
+          }
+        ]
+      },
+      "LLM04-DataPoisoning": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "allennlp/commands/evaluate.py",
+            "line": 265,
+            "cwe": "CWE-20",
+            "snippet": "evaluation_data_path_list = json.loads(f\"[{input_file}]\")"
+          }
+        ]
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM09-Misinformation": {
+        "count": 2,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "tests/confidence_checks/normalization_bias_verification_test.py",
+            "line": 36,
+            "cwe": "CWE-",
+            "snippet": "assert len(self.verification_with_bias._hook_handles) == 3"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/common/testing/model_test_case.py",
+            "line": 69,
+            "cwe": "CWE-",
+            "snippet": "assert verification.check(inputs=self.dataset.as_tensor_dict())"
+          }
+        ]
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:99a643bf-1a24-5498-9fdf-2ca511890d57",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-06T06:48:57Z",
+      "component": {
+        "type": "application",
+        "name": "ALLENNLP",
+        "version": "83b357604d34",
+        "bom-ref": "pkg:generic/anticloud/ALLENNLP@83b357604d34",
+        "purl": "pkg:generic/anticloud/ALLENNLP@83b357604d34",
+        "licenses": [
+          {
+            "license": {
+              "id": "Apache-2.0"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": ""
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/the-anticloud/OPENMRS_CORE.git"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": [
+      {
+        "type": "library",
+        "name": "allennlp",
+        "version": "=allennlp.__main__:run",
+        "purl": "pkg:pypi/allennlp@allennlp.__main__:run",
+        "bom-ref": "pypi/allennlp@=allennlp.__main__:run"
+      }
+    ]
+  },
+  "elapsed_seconds": 6.91
+}
